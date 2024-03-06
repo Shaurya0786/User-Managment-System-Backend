@@ -1,0 +1,29 @@
+<%include("../layouts/header.ejs")%>
+<h1>User Regestration Form</h1>
+<form action="/api/usersRoutes/users" method="post" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Enter Your Name" required>
+    <br>
+    <br>
+    <input type="text" name="email" placeholder="Enter Your Email" required>
+    <br>
+    <br>
+    <input type="text" name="mno" placeholder="Enter Your Number" required>
+    <br>
+    <br>
+    <input type="file" name="UserImage" required>
+    <br>
+    <br>
+    <input type="password" name="password" placeholder="Enter password" required>
+    <br>
+    <br>
+    <input type="submit" value="Registers">
+</form>
+
+
+    <% if(typeof message !== 'undefined') { %>
+        <p>
+            <%= message %>
+        </p>
+    <% } %>
+
+<%include("../layouts/footer.ejs")%>
