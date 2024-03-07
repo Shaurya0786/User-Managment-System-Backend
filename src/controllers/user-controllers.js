@@ -2,13 +2,12 @@ const {UserService} = require('../services')
 const bcrypt = require('bcrypt')
 
 function registeruser(req,res){
+
    return  res.render('Users/registration')
 }
 
  async function createUser(req,res){
     try {
-        //console.log(req.file);
-        //console.log(req)
         const password=req.body.password
         const hash = await bcrypt.hash(password,12)
         const user = await UserService.CreateUser({
