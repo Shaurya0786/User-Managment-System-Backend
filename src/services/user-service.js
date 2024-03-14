@@ -10,6 +10,17 @@ async function CreateUser(data){
     }
 }
 
+async function verifyUser(id){
+    try {
+        const Updateuser = await user.updateOne({_id:id},{$set:{isVerified:1}})
+        return Updateuser;
+    } catch (error) {
+        console.log(error)
+        throw error
+    }
+}
+
 module.exports = {
-    CreateUser
+    CreateUser,
+    verifyUser
 }
